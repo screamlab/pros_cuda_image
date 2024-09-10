@@ -46,6 +46,16 @@ We have written the command `source /workspaces/rebuild_colcon.rc` as an alias <
 
 
 
+## Notes for GitHub Actions CI
+
+The cache file size of the GitHub Actions must not greater than 10GB.
+
+```
+buildx failed with: ERROR: failed to solve: error writing layer blob: The cache file size must be between 0 and 10737418240 bytes. Current file size: 10770972672 bytes
+```
+
+
+
 ## Manually build the image
 
 ### Environments Setup
