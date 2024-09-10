@@ -6,6 +6,11 @@ ARG THREADS=4
 ARG TARGETPLATFORM
 
 SHELL ["/bin/bash", "-c"]
+
+##### Copy Source Code #####
+COPY . /tmp
+
+##### Environment Settings #####
 WORKDIR /tmp
 
 # System Upgrade
