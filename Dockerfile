@@ -22,7 +22,8 @@ RUN apt update && \
     pip3 install --no-cache-dir --upgrade pip && \
 
     ##### Install cuda 12.4 and cudnn #####
-    axel -n 10 https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-keyring_1.1-1_all.deb && \
+    axel -q -n 10 https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-keyring_1.1-1_all.deb && \
+    ls && \
     dpkg -i cuda-keyring_1.1-1_all.deb && \
     apt update && \
     apt install -y cuda-toolkit-12-4 cudnn-cuda-12 && \
@@ -31,7 +32,8 @@ RUN apt update && \
     pip3 install --no-cache-dir -r /tmp/requirements.txt && \
 
     ##### Install TensorRT 10.4 GA #####
-    axel -n 10 https://developer.nvidia.com/downloads/compute/machine-learning/tensorrt/10.4.0/local_repo/nv-tensorrt-local-repo-ubuntu2204-10.4.0-cuda-12.6_1.0-1_amd64.deb && \
+    axel -q -n 10 https://developer.nvidia.com/downloads/compute/machine-learning/tensorrt/10.4.0/local_repo/nv-tensorrt-local-repo-ubuntu2204-10.4.0-cuda-12.6_1.0-1_amd64.deb && \
+    ls && \
     dpkg -i nv-tensorrt-local-repo-ubuntu2204-10.4.0-cuda-12.6_1.0-1_amd64.deb && \
     cp /var/nv-tensorrt-local-repo-ubuntu2204-10.4.0-cuda-12.6/*-keyring.gpg /usr/share/keyrings/ && \
     apt update && \
