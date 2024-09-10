@@ -1,0 +1,4 @@
+# TODO add the python package you need
+numpy
+ncnn
+onnx
